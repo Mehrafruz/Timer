@@ -10,7 +10,6 @@ import UIKit
 
 final class TimerViewController: UIViewController {
     private let output: TimerViewOutput
-    let queue = OperationQueue()
     private var tableView = UITableView()
     var timer: Timer?
     
@@ -81,7 +80,7 @@ final class TimerViewController: UIViewController {
                 
                 if let cell = self.tableView.cellForRow(at: indexPath) as? TimerTableViewCell {
                     let item = self.output.display(at: indexPath.row)
-                    cell.updateTime(with: item.time)
+                  //  cell.updateTime(with: item.time)
                 }
             }
             

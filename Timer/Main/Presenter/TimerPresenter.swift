@@ -15,11 +15,13 @@ final class TimerPresenter {
 	private let router: TimerRouterInput
 	private let interactor: TimerInteractorInput
     
-    private var timers: [TimerModel.Item] = []
+    public var timers: [TimerModel.Item] = []
+    public let creationDate = Date()
 
     init(router: TimerRouterInput, interactor: TimerInteractorInput) {
         self.router = router
         self.interactor = interactor
+        createGlogalTimer()
     }
 }
 

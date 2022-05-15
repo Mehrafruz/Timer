@@ -22,6 +22,7 @@
 		EF683E8926DD67E900E18C62 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF683E8826DD67E900E18C62 /* Timer.swift */; };
 		EF683E8C26DD69A600E18C62 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EF683E8B26DD69A600E18C62 /* data.json */; };
 		EF683E9526DD6D9200E18C62 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF683E9426DD6D9200E18C62 /* TimerTableViewCell.swift */; };
+		EFED0EE628316B4700A97D09 /* TimerPresenter+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED0EE528316B4700A97D09 /* TimerPresenter+Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EF683E8826DD67E900E18C62 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		EF683E8B26DD69A600E18C62 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EF683E9426DD6D9200E18C62 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
+		EFED0EE528316B4700A97D09 /* TimerPresenter+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerPresenter+Timer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				EF683E7A26DD64F600E18C62 /* TimerPresenter.swift */,
+				EFED0EE528316B4700A97D09 /* TimerPresenter+Timer.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				E2B6B2B026E5784200AAEDAA /* CellOperations.swift in Sources */,
 				EF683E8326DD64F600E18C62 /* TimerProtocols.swift in Sources */,
 				EF683E9526DD6D9200E18C62 /* TimerTableViewCell.swift in Sources */,
+				EFED0EE628316B4700A97D09 /* TimerPresenter+Timer.swift in Sources */,
 				EF683E8526DD64F600E18C62 /* TimerContainer.swift in Sources */,
 				EF683E8226DD64F600E18C62 /* TimerViewController.swift in Sources */,
 			);

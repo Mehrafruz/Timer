@@ -12,6 +12,6 @@ struct TimerModel: Codable {
     
     struct Item: Codable {
         let text: String
-        let timer: Int
+        var timer: Int
     }
 }

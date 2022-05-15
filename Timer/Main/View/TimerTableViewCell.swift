@@ -19,14 +19,7 @@ class TimerTableViewCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let timeLabel = UILabel()
     private let exitButton = UIButton()
-    
-    var task: TimerTableViewCellModel? {
-        didSet {
-            titleLabel.text = task?.title
-            setState()
-            updateTime(with: task?.time ?? 0)
-        }
-    }
+    let creationDate = Date()
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -80,49 +73,28 @@ class TimerTableViewCell: UITableViewCell {
     }
     
     func configure(with model: TimerTableViewCellModel) {
-        task = model
         titleLabel.text = model.title
         timeLabel.text = String(model.time)
     }
     
     func updateTime(with seconds: Int) {
-        guard let task = task else {
+        guard seconds != 0 else {
+            timeLabel.text = "0"
             return
         }
         
-        if !task.completed {
-            let time = -(Date().timeIntervalSince(task.creationDate)-Double(seconds))
-            
-            let minutes = Int(time) / 60 % 60
-            let seconds = Int(time) % 60
-            
-            var times: [String] = []
-            
-            if minutes > 0 {
-                times.append("\(minutes)m")
-            }
-            times.append("\(seconds)s")
-            
-            timeLabel.text = times.joined(separator: " ")
-            
-            if seconds == 0 && minutes == 0 {
-                self.task?.completed = true
-            }
-        }
-    }
-    
-    private func setState() {
-        guard let task = task else {
-            return
-        }
+        let time = -(Date().timeIntervalSince(creationDate)-Double(seconds))
         
-        if task.completed {
-            timeLabel.isHidden = true
-            titleLabel.isHidden = false
-            self.isHighlighted = true
-            //через 5 сек зову метод который удаляет ячейку
-        } else if task.textCompleted {
-            
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        var times: [String] = []
+        
+        if minutes > 0 {
+            times.append("\(minutes)m")
         }
+        times.append("\(seconds)s")
+        
+        timeLabel.text = times.joined(separator: " ")
     }
 }
